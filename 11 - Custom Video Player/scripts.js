@@ -21,8 +21,18 @@ function skipVideo() {
   video.currentTime += parseFloat(this.dataset.skip);
 }
 
-function updateRange(e) {
+function updateRange() {
   video[this.name] = this.value;
+}
+
+function updateProgress(e) {
+  const scrub = (e.offsetX / progress.offsetWidth) * video.duration;
+  video.currentTime = scrub;
+}
+
+function progressSlider(e) {
+  const slider = (video.currentTime / video.duration) * 100;
+  progressBar.style.flexBasis = `${slider}%`;
 }
 
 video.addEventListener("click", togglePlay);
@@ -36,4 +46,18 @@ skip.forEach(button => {
 
 range.forEach(value => {
   value.addEventListener("change", updateRange);
+});
+
+video.addEventListener("timeupdate", progressSlider);
+
+let mouseDown = false;
+progress.addEventListener("click", updateProgress);
+progress.addEventListener("mousemove", e => {
+  mouseDown && updateProgress(e);
+});
+progress.addEventListener("mousedown", () => {
+  mouseDown = true;
+});
+progress.addEventListener("mouseup", () => {
+  mouseDown = false;
 });
