@@ -33,7 +33,7 @@ function takePhoto() {
   // play sound
   snap.currentTime = 0;
   snap.play();
-
+  //take photo and save it to url and strip
   const data = canvas.toDataURL("image/jpeg");
   const link = document.createElement("a");
   link.href = data;
