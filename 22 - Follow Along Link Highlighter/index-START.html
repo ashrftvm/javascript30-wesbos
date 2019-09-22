@@ -54,9 +54,17 @@
 
       function highlightLink() {
         const coords = this.getBoundingClientRect();
-        console.log(coords);
-        highlight.style.width = `${coords.width}px`;
-        highlight.style.height = `${coords.height}px`;
+
+        const finCoords = {
+          width: coords.width,
+          height: coords.height,
+          top: coords.top + window.scrollY,
+          left: coords.left + window.scrollX
+        };
+
+        highlight.style.width = `${finCoords.width}px`;
+        highlight.style.height = `${finCoords.height}px`;
+        highlight.style.transform = `translate(${finCoords.left}px, ${finCoords.top}px)`;
       }
 
       triggers.forEach(link => {
