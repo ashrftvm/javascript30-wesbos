@@ -1,5 +1,5 @@
 @charset "UTF-8";
-header {
+header, .contact {
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -19,39 +19,25 @@ header {
   color: #333;
 }
 
-header button {
+header button, .contact button {
   background-color: #02bd8e;
   -webkit-transition: background-color 0.5s ease;
   transition: background-color 0.5s ease;
 }
 
-header button:hover {
+header button:hover, .contact button:hover {
   background-color: #00c3ff;
 }
 
-header button::after {
+header button::after, .contact button::after {
   content: "!!";
 }
 
-header button::before {
+header button::before, .contact button::before {
   content: "👋🏽";
 }
 
 .contact {
   background: #02bd8e;
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
 }
 /*# sourceMappingURL=style.css.map */

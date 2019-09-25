@@ -2,6 +2,9 @@
 @import "./header";
 
 .contact {
+  // @include flexCenter(row);
+  // background: $primaryBtn;
+  @extend header;
   background: $primaryBtn;
-  @include flexCenter(row);
+  // width: 100% - 20%;
 }
