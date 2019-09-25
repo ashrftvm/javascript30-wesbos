@@ -1,27 +1,7 @@
-$primaryBtn: rgb(2, 189, 142);
-$secondaryColor: rgb(0, 195, 255);
-$textColor: #333;
+@import "./variables";
+@import "./header";
 
-header {
-  background: lightblue;
-  display: flex;
-  justify-content: center;
-  color: $textColor;
-  button {
-    background-color: $primaryBtn;
-    transition: background-color 0.5s ease;
-    &:hover {
-      background-color: $secondaryColor;
-    }
-    &::after {
-      content: "!!";
-    }
-    &::before {
-      content: "👋🏽";
-    }
-  }
-}
-
-.contact button {
+.contact {
   background: $primaryBtn;
+  @include flexCenter(row);
 }
