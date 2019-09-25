@@ -1,3 +1,4 @@
+@charset "UTF-8";
 header {
   background: lightblue;
   display: -webkit-box;
@@ -10,7 +11,21 @@ header {
 }
 
 header button {
-  background: #02bd8e;
+  background-color: #02bd8e;
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+}
+
+header button:hover {
+  background-color: #00c3ff;
+}
+
+header button::after {
+  content: "!!";
+}
+
+header button::before {
+  content: "👋🏽";
 }
 
 .contact button {

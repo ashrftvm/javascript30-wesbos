@@ -1,4 +1,5 @@
 $primaryBtn: rgb(2, 189, 142);
+$secondaryColor: rgb(0, 195, 255);
 $textColor: #333;
 
 header {
@@ -7,7 +8,17 @@ header {
   justify-content: center;
   color: $textColor;
   button {
-    background: $primaryBtn;
+    background-color: $primaryBtn;
+    transition: background-color 0.5s ease;
+    &:hover {
+      background-color: $secondaryColor;
+    }
+    &::after {
+      content: "!!";
+    }
+    &::before {
+      content: "👋🏽";
+    }
   }
 }
 
